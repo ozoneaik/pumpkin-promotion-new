@@ -12,20 +12,18 @@
 @endsection
 
 
-@section('head-page','')
+@section('head-page','อนุมัติเบิกทอง')
 @section('content')
     <div class="row">
         <div class="col-md-4">
             <div class="card">
-                <div class="card-header text-bold">เพิ่มลดยอดเพิ่มเติม</div>
+                <div class="card-header text-bold">ค้นหาลูกค้าที่ต้องการเบิกทอง</div>
                 <div class="card-body pb-0">
                     <form action="">
                         <div class="form-group">
                             <label for="">รหัสลูกค้า :</label>
                             <input type="text" class="form-control">
                         </div>
-
-
                         <div class="form-group">
                             <label for="">เลือกโปรโมชั่นที่ต้องการตรวจสอบยอด :</label>
                             <select name="select-promotion" id="sel-pro" class="form-control select2">
@@ -35,63 +33,71 @@
                                 <option value="4">4</option>
                             </select>
                         </div>
-
-                        <div class="form-group">
-                            <label for="">วันที่เริ่มโปโมชั่น :</label>
-                            <input type="datetime-local" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">วันที่สินสุด :</label>
-                            <input type="datetime-local" class="form-control">
-                        </div>
                         <button class="btn btn-sm btn-primary">ตรวจสอบ</button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header text-bold">รายละเอียด</div>
-                <div class="card-body">
-                    <div class="detail mb-3">
-                        <p class="mb-2"><span class="text-bold">รหัสลูกค้า : </span>3710101008</p>
-                        <p class="mb-2"><span class="text-bold">ชื่อร้านค้า :</span> เค.เจ.ที.เทรดดิ้ง บจก.(สำนักงานใหญ่)</p>
-                        <p class="mb-2"><span class="text-bold">จากวันที่</span> 2023-11-2020/11/2023 ถึง 2024-01-2929/01/2024</p>
-                        <p class="mb-2"><span class="text-bold">โปรโมชั่นที่เข้าร่วม :</span> promotion แผ่นไฟเบอร์</p>
-                        <p class="mb-2"><span class="text-bold">เป้าโปรโมชั่น :</span> 180000</p>
+            <form action="">
+                <div class="card bg-success">
+                    <div class="card-header text-bold">เริ่มเบิกทอง</div>
+                    <div class="card-body">
+                        <div class="detail mb-3">
+                            <p class="mb-2"><span class="text-bold">เลขที่  : </span>JO24032701510</p>
+                            <p class="mb-2"><span class="text-bold">ชื่อลูกค้า :</span> เค.เจ.ที.เทรดดิ้ง บจก.(สำนักงานใหญ่)</p>
+                            <p class="mb-2"><span class="text-bold">โปรโมชั่นที่ร่วม  :</span> promotion แผ่นไฟเบอร์</p>
+                            <p class="mb-2"><span class="text-bold">ยอดสะสม  :</span>189328.16</p>
+                            <p class="mb-2"><span class="text-bold">ของสมนาคุณ  :</span></p>
+                            <div class="ml-3">
+                                <div class="form-group">
+                                    <input type="radio" id="G" name="free-gift">
+                                    <label for="G">G<input class="ml-1" type="text" value="ทอง 1 สลึง" readonly></label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="radio" id="V" name="free-gift">
+                                    <label for="V">V</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="radio" id="other" name="free-gift">
+                                    <label for="other">อื่นๆ</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-
-                    <form action="">
-                        <table class="table" id="list-promotion">
-                            <thead>
-                            <tr>
-                                <th>เลขที่บิล</th>
-                                <th>ยอดเพิ่ม-ลด</th>
-                                <th>หมายเหตุ</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @for($i=0;$i<16;$i++)
-                                <tr>
-                                    <td>
-                                        <input type="text" class="form-control" placeholder="เลขที่บิล">
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" placeholder="ยอดเพิ่ม-ลด">
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" placeholder="หมายเหตุ">
-                                    </td>
-                                </tr>
-                            @endfor
-                            </tbody>
-                        </table>
-                    </form>
-
                 </div>
-            </div>
+                <div class="card bg-warning">
+                    <div class="card-header text-bold">ตรวจสอบเอกสารกลับ</div>
+                    <div class="card-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="upload-file">เอกสารตอบรับจากลูกค้า</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="reject-customer" name="upload-file">
+                                    <label id="reject-customer" class="custom-file-label" for="">เอกสารตอบรับจากลูกค้า  :</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-sm btn-primary">ตรวจสอบเอกสารผ่าน</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card bg-warning">
+                    <div class="card-header text-bold">รายละเอียดจบโปรโมชั่น</div>
+                    <div class="card-body">
+                        <div class="detail">
+                            <p><span class="text-bold">เลขที่ : </span>JO24032701510</p>
+                            <p><span class="text-bold">ชื่อลูกค้า  :</span>เค.เจ.ที.เทรดดิ้ง บจก.(สำนักงานใหญ่)</p>
+                            <p><span class="text-bold">โปรโมชั่นที่ร่วม  :</span>promotion แผ่นไฟเบอร์</p>
+                            <p><span class="text-bold">ยอดสะสม  :</span>189328.16</p>
+                            <p><span class="text-bold">ของสมนาคุณ  :</span>ทอง 1 สลึง</p>
+                        </div>
+                        <hr>
+                        <h3 class="text-light text-center">อยู่ระหว่างรออนุมัติจบโปรโมชั่น</h3>
+                    </div>
+                </div>
+            </form>
+
         </div>
     </div>
 

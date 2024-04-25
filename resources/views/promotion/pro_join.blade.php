@@ -12,40 +12,40 @@
 @endsection
 
 
-@section('head-page','')
+@section('head-page','เข้าร่วมโปรโมชั่น')
 @section('content')
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-12 col-xl-4">
             <div class="card">
                 <div class="card-header text-bold">เข้าร่วมโปโมชั่น</div>
                 <div class="card-body pb-0">
                     <form action="">
-                        <div class="form-group">
+                        <div class="form-group input-group input-group-sm ">
                             <label for="">รหัสลูกค้า  :</label>
                             <input type="text" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group input-group input-group-sm">
                             <label for="">ชื่อลูกค้า  :</label>
                             <input type="text" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group input-group input-group-sm">
                             <label for="">ที่อยู่  : </label>
                             <input type="text" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group input-group input-group-sm">
                             <label for="">ตำบล/แขวง  : </label>
                             <input type="text" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group input-group input-group-sm">
                             <label for="">จังหวัด : </label>
                             <input type="text" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group input-group input-group-sm">
                             <label for="">เบอร์โทรติดต่อ  : </label>
                             <input type="text" class="form-control">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group input-group input-group-sm">
                             <label for="">เลือกโปรโมชั่นที่จะเข้าร่วม  :</label>
                             <select name="select-promotion" id="sel-pro" class="form-control select2">
                                 <option value="1">1</option>
@@ -55,22 +55,22 @@
                             </select>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group input-group input-group-sm">
                             <label for="">เป้ายอดสะสม  :</label>
                             <input type="text" class="form-control">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group input-group input-group-sm">
                             <label for="">ชื่อพนักงานที่ดูแล  :</label>
                             <input type="text" class="form-control">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group input-group input-group-sm">
                             <label for="">วันที่เริ่มโปโมชั่น  :</label>
                             <input type="datetime-local" class="form-control">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group input-group input-group-sm">
                             <label for="">วันที่สินสุด  :</label>
                             <input type="datetime-local" class="form-control">
                         </div>
@@ -79,7 +79,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-12 col-xl-8">
             <div class="card">
                 <div class="card-header text-bold">รายชื่อร้านที่เข้าร่วม</div>
                 <div class="card-body">
@@ -130,7 +130,10 @@
 <script>
     $(function () {
         $("#list-promotion").DataTable({
-            pageLength: 100
+            paging: false,
+            scrollY: '250px',
+            bScrollCollapse: true,
+            ordering: false
         });
         $('.select2').select2()
     });

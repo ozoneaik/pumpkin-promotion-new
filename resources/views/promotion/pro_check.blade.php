@@ -15,7 +15,7 @@
 @section('head-page','')
 @section('content')
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-12 col-xl-4">
             <div class="card">
                 <div class="card-header text-bold">ตรวจสอบยอดสะสม</div>
                 <div class="card-body pb-0">
@@ -56,7 +56,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-12 col-xl-8">
             <div class="card">
                 <div class="card-header text-bold">รายละเอียด</div>
                 <div class="card-body">
@@ -130,8 +130,10 @@
 <script>
     $(function () {
         $("#list-promotion").DataTable({
-            pageLength: 100,
-            "responsive": true,
+            paging: false,
+            scrollY: '250px',
+            bScrollCollapse: true,
+            ordering: false
         });
         $('.select2').select2()
     });

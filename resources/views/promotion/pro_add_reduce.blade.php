@@ -88,6 +88,8 @@
                             @endfor
                             </tbody>
                         </table>
+
+                        <button class="btn btn-sm btn-primary">บันทึกข้อมูล</button>
                     </form>
 
                 </div>
@@ -121,8 +123,10 @@
 <script>
     $(function () {
         $("#list-promotion").DataTable({
-            pageLength: 100,
-            "responsive": true,
+            paging: false,
+            scrollY: '250px',
+            bScrollCollapse: true,
+            ordering: false
         });
         $('.select2').select2()
     });

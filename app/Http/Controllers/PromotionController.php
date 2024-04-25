@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Promotion;
+use App\Models\TypePromotion;
 use Illuminate\Http\Request;
 
 class PromotionController extends Controller
@@ -11,9 +13,7 @@ class PromotionController extends Controller
         return view('promotion.pro_dashboard');
     }
 
-    public function pro_manage(){
-        return view('promotion.pro_manage');
-    }
+
 
     public function pro_join(){
         return view('promotion.pro_join');

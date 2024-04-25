@@ -16,19 +16,23 @@
     <style>
         *{
             font-family: "Anuphan", sans-serif;
-            font-size: 14px !important;
-        }
-        table td{
-            font-size: 14px !important;
-        }
-        table th{
-            font-size: 14px !important;
+            /*font-size: 14px !important;*/
         }
         .active {
             background: #ca4d35 !important;
         }
+
+        .nav-treeview .active{
+            background: white !important;
+        }
+
+
         .navbar-dark{
             background: #222222 !important;
+        }
+
+        th,td{
+            white-space: nowrap;
         }
     </style>
 
@@ -56,14 +60,18 @@
 </head>
 <body class="sidebar-mini control-sidebar-slide-open layout-navbar-fixed">
 <div class="wrapper">
-    <nav class="main-header navbar navbar-expand navbar-dark navbar-dark">
+    <nav class="main-header navbar navbar-expand navbar-dark">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"
                 ><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">ระบบจัดการโปรโมชั่นสำหรับ บจก. พัมคิน คอร์ปอเรชั่น</a>
+                <div class="d-flex">
+                    <img src="{{asset('images/logo.png')}}" height="40" alt="">
+                    <a href="#" class="nav-link text-bold" style="font-size: 20px !important;">บจก. พัมคิน คอร์ปอเรชั่น</a>
+                </div>
+
             </li>
         </ul>
 

@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/pro-dashboard.css')}}">
 @endsection
 
 
@@ -12,10 +13,10 @@
 @section('content')
     <div class="card">
         <div class="card-header text-bold">ครบกำหนดแล้ว</div>
-        <div class="card-body">
+        <div class="card-body table-responsive">
             <table class="table" id="done">
                 <thead>
-                <tr>
+                <tr >
                     <th>รหัสลูกค้า</th>
                     <th>ชื่อร้านค้า</th>
                     <th>โปรที่ร่วมรายการ</th>
@@ -27,12 +28,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                @for($i=0;$i<1;$i++)
+                @for($i=0;$i<20;$i++)
                     <tr>
-                        <td>1761901010 {{$i}}</td>
+                        <td>1761901010{{$i}}</td>
                         <td>ซีเอชสินรุ่งเรือง บจก.</td>
                         <td>promotion แผ่นไฟเบอร์</td>
-                        <td>2015-06-24 15:46:17์</td>
+                        <td>2015-06-24 15:46:17</td>
                         <td>45000</td>
                         <td>เบิกทองพิมพ์เอกสาร</td>
                         <td>48319.07</td>
@@ -135,13 +136,22 @@
 <script>
     $(function () {
         $("#done").DataTable({
-            responsive: true
+            paging: false,
+            scrollY: '250px',
+            bScrollCollapse: true,
+            ordering: false
         });
         $("#mouth").DataTable({
-            responsive: true
+            paging: false,
+            scrollY: '250px',
+            bScrollCollapse: true,
+            ordering: false
         });
         $("#week").DataTable({
-            responsive: true
+            paging: false,
+            scrollY: '250px',
+            bScrollCollapse: true,
+            ordering: false
         });
     });
 </script>
